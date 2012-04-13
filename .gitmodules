@@ -25,3 +25,9 @@
 [submodule "modules/stdlib"]
 	path = modules/stdlib
 	url = https://github.com/puppetlabs/puppetlabs-stdlib
+[submodule "modules/cobbler"]
+	path = modules/cobbler
+	url = https://github.com/CiscoSystems/puppet-cobbler.git
+[submodule "modules/puppet"]
+	path = modules/puppet
+	url = https://github.com/CiscoSystems/puppet-puppet.git
