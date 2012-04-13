@@ -1,0 +1,27 @@
+[submodule "modules/openstack"]
+	path = modules/openstack
+	url = https://github.com/CiscoSystems/puppet-openstack
+[submodule "modules/nova"]
+	path = modules/nova
+	url = https://github.com/CiscoSystems/puppet-nova
+[submodule "modules/glance"]
+	path = modules/glance
+	url = https://github.com/CiscoSystems/puppet-glance
+[submodule "modules/keystone"]
+	path = modules/keystone
+	url = https://github.com/CiscoSystems/puppet-keystone
+[submodule "modules/mysql"]
+	path = modules/mysql
+	url = https://github.com/puppetlabs/puppetlabs-mysql
+[submodule "modules/create_resources"]
+	path = modules/create_resources
+	url = https://github.com/puppetlabs/puppetlabs-create_resources
+[submodule "modules/concat"]
+	path = modules/concat
+	url = https://github.com/puppetlabs/puppet-concat
+[submodule "modules/rabbitmq"]
+	path = modules/rabbitmq
+	url = https://github.com/puppetlabs/puppetlabs-rabbitmq
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib
