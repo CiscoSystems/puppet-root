@@ -10,8 +10,8 @@ not, however, the case yet. You have been warned.
 How to use it?
 
 Branch (or "fork") this repository as your /etc/puppet:
-
-    git clone https://github.com/CiscoSystems/puppet-root /etc/puppet
+    
+    git clone --recurse https://github.com/CiscoSystems/puppet-root /etc/puppet
 
 You can use Puppet as you normally would and keep your changes in
 version control. 
