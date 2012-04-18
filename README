@@ -9,14 +9,9 @@ not, however, the case yet. You have been warned.
 
 How to use it?
 
-Branch (or "fork") this repository as your /etc/puppet:
-    
-    git clone --recurse https://github.com/CiscoSystems/puppet-root /etc/puppet
+Clone this repository to somehwere convenient. I suggest using something
+like $HOME/cisco-openstack-puppet:
 
-You can use Puppet as you normally would and keep your changes in
-version control. 
-You can choose to pull from the Cisco repository or rebase on top of it.
-Both scenarios are intended to work.
+    git clone --recurse https://github.com/CiscoSystems/puppet-base $HOME/cisco-openstack-puppet
 
-Certain things that are expected to be found in this directory are not
-there.
+Add this directory to your modulepath in /etc/puppet/puppet.conf.
