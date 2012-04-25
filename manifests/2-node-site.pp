@@ -19,13 +19,14 @@ node ntp_nodes { class { ntp:
 # which is used by the cobbler preseed file to set up the default admin user.
 node /cobbler\.example\.com/ inherits ntp_nodes {
  class { cobbler:
-  node_subnet => "192.168.1.0",
-  node_netmask => "255.255.255.0",
-  node_gateway => "192.168.1.1",
-  node_dns => "192.168.1.1",
-  domain_name => "example.com",
-  ucs_org => "org-EXAMPLE",
-  proxy => "http://192.168.1.1:3124/",
+  node_subnet      => "192.168.1.0",
+  node_netmask     => "255.255.255.0",
+  node_gateway     => "192.168.1.1",
+  node_dns         => "192.168.1.1",
+  domain_name      => "example.com",
+  ip               => "192.168.1.5",
+  ucs_org          => "org-EXAMPLE",
+  proxy            => "http://192.168.1.1:3124/",
   password_crypted => '.DO/SOAPxKem.dRDx6UbyMd0HM6RQl1fxHYxPRuYFrRB04OcbO7c1',
  }
 }
