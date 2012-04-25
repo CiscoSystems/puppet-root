@@ -40,14 +40,7 @@ node cloud_nodes inherits ntp_nodes { class { puppet:
  }
 }
 
-# This is a definition for a cloud compute node only.
-# Change the bridge IP, glance IP, and mysql IP as appropriate
-node /cloud-cmp-10\.example\.com/ inherits cloud_nodes { class { "openstack::compute-node":
-  bridge_ip => '192.168.2.10',
-  glance_api_servers => '192.168.1.5:9292',
-  mysql_ip => "192.168.1.5",
- }
-}
+# Node Definitions
 
 # This is a definition of a controller node, that also includes compute
 # Principally, this node, runs nova, glance, keystone, and eventually could run 
@@ -56,9 +49,19 @@ node /cloud-cmp-10\.example\.com/ inherits cloud_nodes { class { "openstack::com
 # (in this case cloud-ctrl-5 is 192.168.1.5)
 node /could-ctrl-5\.example\.com/ inherits cloud_nodes {class { "openstack::all-in-one":
  }
+ bridge_ip => '192.168.2.5',
  nova::db::host_access { "192.168.1.5":
-  user => "nova",
-  password => $openstack::all-in-one::nova_db_password,
-  database => "nova",
+  user      => "nova",
+  password  => $openstack::all-in-one::nova_db_password,
+  database  => "nova",
  }
-}
+}
+
+# This is a definition for a cloud compute node only.
+# Change the bridge IP, glance IP, and mysql IP as appropriate
+node /cloud-cmp-10\.example\.com/ inherits cloud_nodes { class { "openstack::compute-node":
+  bridge_ip => '192.168.2.10',
+  glance_api_servers => '192.168.1.5:9292',
+  mysql_ip => "192.168.1.5",
+ }
+}
