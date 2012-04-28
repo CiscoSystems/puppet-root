@@ -25,9 +25,8 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
   node_dns         => "192.168.1.1",
   domain_name      => "example.com",
   ip               => "192.168.1.5",
-  ucs_org          => "org-EXAMPLE",
   proxy            => "http://192.168.1.1:3124/",
-  password_crypted => '.DO/SOAPxKem.dRDx6UbyMd0HM6RQl1fxHYxPRuYFrRB04OcbO7c1',
+  password_crypted => '$6$UfgWxrIv$k4KfzAEMqMg.fppmSOTd0usI4j6gfjs0962.JXsoJRWa5wMz8yQk4SfInn4.WZ3L/MCt5u.62tHDGB36EhiKF1',
  }
 }
 
@@ -66,3 +65,23 @@ node /cloud-cmp-10\.example\.com/ inherits cloud_nodes { class { "openstack::com
   mysql_ip => "192.168.1.5",
  }
 }
+
+# Add a node into the cobbler system
+# Change as appropriate (mac address and IP at least) to match
+# your environment
+cobbler::node { "sdu-os-1":
+ mac                => "00:25:b5:00:00:08",
+ profile            => "precise-x86_64-auto",
+ ip                 => "192.168.1.5",
+ domain             => "example.com",
+ preseed            => "/etc/cobbler/cisco-preseed",
+ power_address      => "192.168.6.15:org-EXAMPLE",
+ power_type         => "ucs",
+ power_user         => "admin",
+ power_password     => "Sdu!12345",
+ power_id           => "EXAMPLE-1",
+ root_disk          => "/dev/sdc",
+ add_hosts_entry    => true,
+ extra_host_aliases => ["nova","keystone","glance","horizon"],
+}
+
