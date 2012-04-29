@@ -21,7 +21,7 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
 
  class { puppet:
   run_master => true,
-  run_agent => true,
+  run_agent => false,
   puppetmaster_address => "cobbler.example.com",
  }
 
