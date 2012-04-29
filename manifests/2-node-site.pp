@@ -18,6 +18,14 @@ node ntp_nodes { class { ntp:
 # An example MD5 crypted password is ubuntu: .DO/SOAPxKem.dRDx6UbyMd0HM6RQl1fxHYxPRuYFrRB04OcbO7c1
 # which is used by the cobbler preseed file to set up the default admin user.
 node /cobbler\.example\.com/ inherits ntp_nodes {
+
+ class { puppet:
+  run_master => true,
+  run_agent => true,
+  puppetmaster_address => "cobbler.example.com",
+ }
+
+ 
  class { cobbler:
   node_subnet      => "192.168.1.0",
   node_netmask     => "255.255.255.0",
