@@ -40,6 +40,21 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
 # Add cobbler::node definitions here:
 
 
+# Let's also make sure we have cloned the appropriate cobbler boot isos (UBUNTU SPECIFIC)
+
+ cobbler::ubuntu { "precise":
+ }
+
+# And we need a preseed file before we get ahead of ourselves.
+
+cobbler::ubuntu::preseed { "cisco-preseed":
+  packages => "openssh-server ntp bridge-utils dnsmasq",
+  late_command => "echo \"server $http_server\" >> /target/etc/ntp.conf; wget \"http://${http_server}/agent_2_5_2.answers \" -O /target/root/agent_2_5_2.answers; wget \"http://${http_server}/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64.tar.gz\" -O /target/root/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64.tar.gz; in-target bash -c \'tar -xzvf /root/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64.tar.gz -C /root/\'; in-target bash -c \'/root/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64/puppet-enterprise-installer -a /root/agent_2_5_2.answers >& /root/puppet_install.log\'; wget -O /dev/null http://$http_server:$http_port/cblr/svc/op/nopxe/system/$system_name",
+  proxy => "http://128.107.252.163:3142/",
+  password_crypted => '$6$5NP1.NbW$WOXi0W1eXf9GOc0uThT5pBNZHqDH9JNczVjt9nzFsH7IkJdkUpLeuvB
+U.Zs9x3P6LBGKQh6b0zuR8XSlmcuGn.',
+ }
+
 # Add a node into the cobbler system
 # Change as appropriate (mac address and IP at least) to match
 # your environment
@@ -48,7 +63,7 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
   profile            => "precise-x86_64-auto",
   ip                 => "192.168.1.5",
   domain             => "example.com",
-  preseed            => "/etc/cobbler/cisco-preseed",
+  preseed            => "/etc/cobbler/preseeds/cisco-preseed",
   power_address      => "192.168.6.15:org-EXAMPLE",
   power_type         => "ucs",
   power_user         => "admin",
@@ -59,10 +74,6 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
   extra_host_aliases => ["nova","keystone","glance","horizon"],
  }
 
-# Let's also make sure we have cloned the appropriate cobbler boot isos (UBUNTU SPECIFIC)
-
- cobbler::ubuntu { "precise":
- }
 
 }
 
