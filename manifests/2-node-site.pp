@@ -33,8 +33,6 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
   node_dns         => "192.168.1.1",
   domain_name      => "example.com",
   ip               => "192.168.1.5",
-  proxy            => "http://192.168.1.1:3124/",
-  password_crypted => '$6$UfgWxrIv$k4KfzAEMqMg.fppmSOTd0usI4j6gfjs0962.JXsoJRWa5wMz8yQk4SfInn4.WZ3L/MCt5u.62tHDGB36EhiKF1',
  }
 
 # Add cobbler::node definitions here:
@@ -48,12 +46,11 @@ node /cobbler\.example\.com/ inherits ntp_nodes {
 # And we need a preseed file before we get ahead of ourselves.
 
 cobbler::ubuntu::preseed { "cisco-preseed":
-  packages => "openssh-server ntp bridge-utils dnsmasq",
-  late_command => "echo \"server $http_server\" >> /target/etc/ntp.conf; wget \"http://${http_server}/agent_2_5_2.answers \" -O /target/root/agent_2_5_2.answers; wget \"http://${http_server}/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64.tar.gz\" -O /target/root/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64.tar.gz; in-target bash -c \'tar -xzvf /root/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64.tar.gz -C /root/\'; in-target bash -c \'/root/puppet-enterprise-2.5.2rc0-32-g980a064-ubuntu-12.04-amd64/puppet-enterprise-installer -a /root/agent_2_5_2.answers >& /root/puppet_install.log\'; wget -O /dev/null http://$http_server:$http_port/cblr/svc/op/nopxe/system/$system_name",
-  proxy => "http://128.107.252.163:3142/",
-  password_crypted => '$6$5NP1.NbW$WOXi0W1eXf9GOc0uThT5pBNZHqDH9JNczVjt9nzFsH7IkJdkUpLeuvB
-U.Zs9x3P6LBGKQh6b0zuR8XSlmcuGn.',
- }
+ packages => "openssh-server ntp bridge-utils puppet dnsmasq",
+ late_command => "sed -e \"/logdir/ a pluginsync=true\" -i /target/etc/puppet/puppet.conf ; sed -e \"s/START=no/START=yes/\" -i /target/etc/default/puppet ; echo \"server \$http_server iburst\" > /target/etc/ntp.conf ; wget -O /dev/null http://\$http_server:\$http_port/cblr/svc/op/nopxe/system/\$system_name ",
+ proxy => "http://128.107.252.163:3142/",
+ password_crypted => '$6$5NP1.NbW$WOXi0W1eXf9GOc0uThT5pBNZHqDH9JNczVjt9nzFsH7IkJdkUpLeuvBU.Zs9x3P6LBGKQh6b0zuR8XSlmcuGn.',
+}
 
 # Add a node into the cobbler system
 # Change as appropriate (mac address and IP at least) to match
