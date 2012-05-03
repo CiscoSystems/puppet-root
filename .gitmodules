@@ -37,3 +37,6 @@
 [submodule "modules/apt"]
 	path = modules/apt
 	url = https://github.com/CiscoSystems/puppet-apt.git
+[submodule "modules/apt-cacher-ng"]
+	path = modules/apt-cacher-ng
+	url = https://github.com/CiscoSystems/puppet-apt-cacher-ng.git
