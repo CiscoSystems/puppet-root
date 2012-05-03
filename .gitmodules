@@ -43,3 +43,6 @@
 [submodule "modules/dnsmasq"]
 	path = modules/dnsmasq
 	url = https://github.com/CiscoSystems/puppet-dnsmasq
+[submodule "modules/memcached"]
+	path = modules/memcached
+	url = https://github.com/CiscoSystems/puppet-memcached
