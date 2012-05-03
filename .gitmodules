@@ -12,19 +12,19 @@
 	url = https://github.com/CiscoSystems/puppet-keystone
 [submodule "modules/mysql"]
 	path = modules/mysql
-	url = https://github.com/puppetlabs/puppetlabs-mysql
+	url = https://github.com/CiscoSystems/puppet-mysql
 [submodule "modules/create_resources"]
 	path = modules/create_resources
-	url = https://github.com/puppetlabs/puppetlabs-create_resources
+	url = https://github.com/CiscoSystems/puppet-create_resources
 [submodule "modules/concat"]
 	path = modules/concat
-	url = https://github.com/puppetlabs/puppet-concat
+	url = https://github.com/CiscoSystems/puppet-concat
 [submodule "modules/rabbitmq"]
 	path = modules/rabbitmq
-	url = https://github.com/puppetlabs/puppetlabs-rabbitmq
+	url = https://github.com/CiscoSystems/puppet-rabbitmq
 [submodule "modules/stdlib"]
 	path = modules/stdlib
-	url = https://github.com/puppetlabs/puppetlabs-stdlib
+	url = https://github.com/CiscoSystems/puppet-stdlib
 [submodule "modules/cobbler"]
 	path = modules/cobbler
 	url = https://github.com/CiscoSystems/puppet-cobbler
@@ -33,7 +33,7 @@
 	url = https://github.com/CiscoSystems/puppet-puppet
 [submodule "modules/ntp"]
 	path = modules/ntp
-	url =  https://github.com/puppetlabs/puppetlabs-ntp
+	url =  https://github.com/CiscoSystems/puppet-ntp
 [submodule "modules/apt"]
 	path = modules/apt
 	url = https://github.com/CiscoSystems/puppet-apt
