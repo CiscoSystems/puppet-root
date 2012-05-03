@@ -40,3 +40,6 @@
 [submodule "modules/apt-cacher-ng"]
 	path = modules/apt-cacher-ng
 	url = https://github.com/CiscoSystems/puppet-apt-cacher-ng.git
+[submodule "modules/dnsmasq"]
+	path = modules/dnsmasq
+	url = https://github.com/CiscoSystems/puppet-dnsmasq.git
