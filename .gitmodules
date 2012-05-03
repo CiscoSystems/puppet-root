@@ -46,3 +46,6 @@
 [submodule "modules/memcached"]
 	path = modules/memcached
 	url = https://github.com/CiscoSystems/puppet-memcached
+[submodule "modules/horizon"]
+	path = modules/horizon
+	url = https://github.com/CiscoSystems/puppet-horizon
