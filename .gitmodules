@@ -49,3 +49,6 @@
 [submodule "modules/horizon"]
 	path = modules/horizon
 	url = https://github.com/CiscoSystems/puppet-horizon
+[submodule "modules/sysctl"]
+	path = modules/sysctl
+	url = https://github.com/CiscoSystems/puppet-sysctl
