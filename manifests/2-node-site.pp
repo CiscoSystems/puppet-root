@@ -66,7 +66,7 @@ cobbler::ubuntu::preseed { "cisco-preseed":
   power_user         => "admin",
   power_password     => "Sdu!12345",
   power_id           => "EXAMPLE-1",
-  root_disk          => "/dev/sdc",
+  boot_disk          => "/dev/sdc",
   add_hosts_entry    => true,
   extra_host_aliases => ["nova","keystone","glance","horizon"],
  }
