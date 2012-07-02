@@ -52,3 +52,6 @@
 [submodule "modules/sysctl"]
 	path = modules/sysctl
 	url = https://github.com/CiscoSystems/puppet-sysctl
+[submodule "modules/swift"]
+	path = modules/swift
+	url = https://github.com/CiscoSystems/puppet-swift
