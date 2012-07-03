@@ -55,3 +55,6 @@
 [submodule "modules/swift"]
 	path = modules/swift
 	url = https://github.com/CiscoSystems/puppet-swift
+[submodule "modules/apache"]
+	path = modules/apache
+	url = https://github.com/CiscoSystems/puppet-apache
