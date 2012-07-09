@@ -58,3 +58,6 @@
 [submodule "modules/apache"]
 	path = modules/apache
 	url = https://github.com/CiscoSystems/puppet-apache
+[submodule "modules/lvm"]
+	path = modules/lvm
+	url = https://github.com/CiscoSystems/puppetlabs-lvm
