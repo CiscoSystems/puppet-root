@@ -61,3 +61,15 @@
 [submodule "modules/lvm"]
 	path = modules/lvm
 	url = https://github.com/CiscoSystems/puppetlabs-lvm
+[submodule "modules/ssh"]
+	path = modules/ssh
+	url = https://github.com/CiscoSystems/puppet-ssh
+[submodule "modules/collectd"]
+	path = modules/collectd
+	url = https://github.com/CiscoSystems/puppet-collectd
+[submodule "modules/snmpd"]
+	path = modules/snmpd
+	url = https://github.com/CiscoSystems/puppet-snmpd
+[submodule "modules/rsync"]
+	path = modules/rsync
+	url = https://github.com/CiscoSystems/puppet-rsync
