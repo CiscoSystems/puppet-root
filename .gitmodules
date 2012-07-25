@@ -73,3 +73,6 @@
 [submodule "modules/rsync"]
 	path = modules/rsync
 	url = https://github.com/CiscoSystems/puppet-rsync
+[submodule "modules/xinetd"]
+	path = modules/xinetd
+	url = https://github.com/CiscoSystems/puppet-xinetd
