@@ -76,3 +76,12 @@
 [submodule "modules/xinetd"]
 	path = modules/xinetd
 	url = https://github.com/CiscoSystems/puppet-xinetd
+[submodule "modules/drbd"]
+	path = modules/drbd
+	url = https://github.com/CiscoSystems/puppet-drbd
+[submodule "modules/openstack_admin"]
+	path = modules/openstack_admin
+	url = https://github.com/CiscoSystems/puppet-openstack_admin
+[submodule "modules/corosync"]
+	path = modules/corosync
+	url = https://github.com/CiscoSystems/puppet-corosync
