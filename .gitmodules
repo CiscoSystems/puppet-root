@@ -85,3 +85,9 @@
 [submodule "modules/corosync"]
 	path = modules/corosync
 	url = https://github.com/CiscoSystems/puppet-corosync
+[submodule "modules/nagios"]
+	path = modules/nagios
+	url = https://github.com/CiscoSystems/puppet-nagios
+[submodule "modules/monit"]
+	path = modules/monit
+	url = https://github.com/CiscoSystems/puppet-monit
