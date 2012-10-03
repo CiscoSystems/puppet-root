@@ -12,6 +12,6 @@ How to use it?
 Clone this repository to somehwere convenient. I suggest using something
 like $HOME/cisco-openstack-puppet:
 
-    git clone --recurse https://github.com/CiscoSystems/puppet-base $HOME/cisco-openstack-puppet
+    git clone --recurse https://github.com/CiscoSystems/puppet-root $HOME/cisco-openstack-puppet
 
 Add this directory to your modulepath in /etc/puppet/puppet.conf.
