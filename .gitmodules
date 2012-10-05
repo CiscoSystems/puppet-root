@@ -91,3 +91,6 @@
 [submodule "modules/monit"]
 	path = modules/monit
 	url = https://github.com/CiscoSystems/puppet-monit
+[submodule "modules/graphite"]
+	path = modules/graphite
+	url = https://github.com/CiscoSystems/puppet-graphite
