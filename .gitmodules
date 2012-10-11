@@ -94,3 +94,6 @@
 [submodule "modules/graphite"]
 	path = modules/graphite
 	url = https://github.com/CiscoSystems/puppet-graphite
+[submodule "modules/quantum"]
+	path = modules/quantum
+	url = https://github.com/CiscoSystems/puppet-quantum
