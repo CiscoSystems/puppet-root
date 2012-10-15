@@ -97,3 +97,6 @@
 [submodule "modules/quantum"]
 	path = modules/quantum
 	url = https://github.com/CiscoSystems/puppet-quantum
+[submodule "modules/inifile"]
+	path = modules/inifile
+	url = https://github.com/CiscoSystems/puppet-inifile
