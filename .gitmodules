@@ -94,3 +94,6 @@
 [submodule "modules/graphite"]
 	path = modules/graphite
 	url = https://github.com/CiscoSystems/puppet-graphite
+[submodule "modules/pip"]
+	path = modules/pip
+	url = https://github.com/CiscoSystems/puppet-pip
