@@ -103,3 +103,6 @@
 [submodule "modules/vswitch"]
 	path = modules/vswitch
 	url = https://github.com/CiscoSystems/puppet-vswitch
+[submodule "modules/pip"]
+	path = modules/pip
+	url = https://github.com/CiscoSystems/puppet-pip
