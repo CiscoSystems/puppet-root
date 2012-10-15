@@ -100,3 +100,6 @@
 [submodule "modules/inifile"]
 	path = modules/inifile
 	url = https://github.com/CiscoSystems/puppet-inifile
+[submodule "modules/vswitch"]
+	path = modules/vswitch
+	url = https://github.com/CiscoSystems/puppet-vswitch
